@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GroqService {
-  private apiKey = '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';
+  private apiKey = environment.groqApiKey;
   private apiUrl = 'https://api.groq.com/openai/v1/chat/completions';
 
   constructor(private http: HttpClient) { }
@@ -20,7 +21,7 @@ export class GroqService {
 Keep the response concise and focused on the quote and its relevance.`;
 
     const requestBody = {
-      model: 'llama3-8b-8192',
+      model: 'llama3-70b-8192',
       messages: [
         {
           role: 'user',
