@@ -16,7 +16,7 @@ export class GroqService {
     const prompt = `For someone feeling "${feeling}", provide relevant quotes from the Quran or Hadith. Format your response as follows:
 1. The quote in English, with proper citation:
    - For Quran quotes: Use the exact translation from quran.com, citing as "Qur'an - Surah [Name] ([chapter]:[verse])" with a link to quran.com/[chapter]/[verse]
-   - For Hadith quotes: Include hadith name and number
+   - For Hadith quotes: Include hadith name and number with a link to sunnah.com/[collection]/[book]/[number]
 2. A brief explanation of how this quote relates to their feeling
 Keep the response concise and focused on the quote and its relevance.`;
 
