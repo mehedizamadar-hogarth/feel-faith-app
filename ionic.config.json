@@ -1,0 +1,7 @@
+{
+  "name": "FeelFaith",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
