@@ -8,9 +8,13 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'feeling-quote',
     pathMatch: 'full'
   },
+  {
+    path: 'feeling-quote',
+    loadComponent: () => import('./components/feeling-quote/feeling-quote.component').then(m => m.FeelingQuoteComponent)
+  }
 ];
 
 @NgModule({

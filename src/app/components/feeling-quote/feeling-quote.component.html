@@ -1,0 +1,41 @@
+<ion-content class="ion-padding">
+  <div class="container">
+    <h1 class="title">FeelFaith</h1>
+    <p class="subtitle">Find peace and guidance through Islamic wisdom</p>
+
+    <ion-card class="input-card">
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="stacked">How are you feeling today?</ion-label>
+          <ion-input
+            [(ngModel)]="feeling"
+            placeholder="e.g., Happy, Sad, Anxious, Grateful..."
+            (keyup.enter)="getQuote()"
+          ></ion-input>
+        </ion-item>
+
+        <ion-button
+          expand="block"
+          (click)="getQuote()"
+          [disabled]="loading"
+          class="submit-button"
+        >
+          <ion-spinner *ngIf="loading" name="crescent"></ion-spinner>
+          <span *ngIf="!loading">Get Guidance</span>
+        </ion-button>
+
+        <div *ngIf="error" class="error-message">
+          {{ error }}
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="quote" class="quote-card">
+      <ion-card-content>
+        <div class="quote-content">
+          {{ quote }}
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content> 
